@@ -28,42 +28,41 @@ function playRound(playerSelection, computerSelection) {
         playerSelection == 'scissors' && computerSelection == 'rock'
     ) {
         console.log("You lose! " + computerSelection + " beats " + playerSelection);
-        return cpuScore;
+        return cpuScore++;
     } else if (
         playerSelection == 'rock' && computerSelection == 'scissors' ||
         playerSelection == 'paper' && computerSelection == 'rock' ||
         playerSelection == 'scissors' && computerSelection == 'paper'
     ) {
         console.log("You win! " + playerSelection + " beats " + computerSelection);
-        return playerScore;
+        return playerScore++;
     } else if (playerSelection == computerSelection) {
         console.log("Draw");
         return draw;
     }
 }
 
-function score(roundResult) {
-    if (roundResult === playerScore) {
-        playerScore++;
-        return gameScore;
-    } else if (roundResult === cpuScore) {
-        cpuScore++;
-    }   return gameScore;
-}
 
 function game() {
     for (let i = 0; i < 5; i++) {
-        if (playerScore > cpuScore) {
-            console.log("Player won!")
-        } else if (cpuScore > playerScore) {
-            console.log("CPU won!")
-        }
+        playRound(playerSelection, computerSelection);
+   
     }
 }
 
 
 console.log("Computer choice: " + computerSelection);
-console.log(score(roundResult));
+console.log(cpuScore);
+console.log(playerScore);
+console.log(gameScore);
+console.log(playRound(playerSelection, computerSelection));
+console.log(game);
+
+         // if (playerScore > cpuScore) {
+            //     console.log("Player won!")
+            //     } else if (cpuScore > playerScore) {
+            //     console.log("CPU won!")
+            //     }
 
 
 
