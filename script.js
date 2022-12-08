@@ -22,47 +22,42 @@ function getComputerChoice(list) {
 
 
 function playRound(playerSelection, computerSelection) {
-    if (
+    if (playerSelection == computerSelection) {
+        console.log("Draw");
+        return draw;
+    } else if (
         playerSelection == 'rock' && computerSelection == 'paper' ||
         playerSelection == 'paper' && computerSelection == 'scissors' ||
         playerSelection == 'scissors' && computerSelection == 'rock'
     ) {
         console.log("You lose! " + computerSelection + " beats " + playerSelection);
         return cpuScore++;
-    } else if (
-        playerSelection == 'rock' && computerSelection == 'scissors' ||
-        playerSelection == 'paper' && computerSelection == 'rock' ||
-        playerSelection == 'scissors' && computerSelection == 'paper'
-    ) {
+    } else {
         console.log("You win! " + playerSelection + " beats " + computerSelection);
         return playerScore++;
-    } else if (playerSelection == computerSelection) {
-        console.log("Draw");
-        return draw;
     }
-}
+    }
 
 
 function game() {
     for (let i = 0; i < 5; i++) {
         playRound(playerSelection, computerSelection);
-   
-    }
+        if (playerScore > cpuScore) {
+            console.log("Player wins!")
+        } else if (cpuScore > playerScore) {
+            console.log("CPU Wins!")
+        } 
+    } 
 }
 
 
 console.log("Computer choice: " + computerSelection);
-console.log(cpuScore);
-console.log(playerScore);
+// console.log(cpuScore);
+// console.log(playerScore);
 console.log(gameScore);
-console.log(playRound(playerSelection, computerSelection));
-console.log(game);
+// console.log(playRound(playerSelection, computerSelection));
 
-         // if (playerScore > cpuScore) {
-            //     console.log("Player won!")
-            //     } else if (cpuScore > playerScore) {
-            //     console.log("CPU won!")
-            //     }
+         
 
 
 
