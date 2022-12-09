@@ -1,10 +1,9 @@
 const choices = ['rock', 'paper', 'scissors'];
-const computerSelection = getComputerChoice(choices);
-let playerSelection = getPlayerChoice();
+let computerSelection = getComputerChoice(choices);
+
 let playerScore = 0;
 let cpuScore = 0;
 let draw = 0;
-let roundResult = playRound(playerSelection, computerSelection);
 let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
 
 
@@ -50,7 +49,6 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice(choices);
         playRound(playerSelection, computerSelection);
         if (playerScore > cpuScore) {
             console.log("Player wins!")
@@ -60,12 +58,13 @@ function game() {
     } 
 }
 
+game();
 
-console.log("Computer choice: " + computerSelection);
-// console.log(cpuScore);
-// console.log(playerScore);
 console.log(gameScore);
-// console.log(playRound(playerSelection, computerSelection));
+console.log(cpuScore);
+console.log(playerScore);
+
+
 
          
 
