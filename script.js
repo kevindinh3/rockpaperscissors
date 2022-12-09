@@ -1,12 +1,8 @@
 const choices = ['rock', 'paper', 'scissors'];
 
-
 let playerScore = 0;
 let cpuScore = 0;
 let draw = 0;
-
-
-
 
 function getComputerChoice(list) {
     // get random index value
@@ -50,6 +46,7 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = getPlayerChoice();
         let computerSelection = getComputerChoice(choices);
+        console.log("Computer selected " + computerSelection);
         playRound(playerSelection, computerSelection);
         let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
         console.log(gameScore);
@@ -63,8 +60,7 @@ function game() {
 }
 
 game();
-console.log(cpuScore);
-console.log(playerScore);
+
 
 
 
