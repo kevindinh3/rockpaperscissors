@@ -57,7 +57,9 @@ function game() {
         console.log("Player wins!")
     } else if (cpuScore > playerScore) {
         console.log("CPU Wins!")
-    } 
+    } else {
+        console.log("Draw!")
+    }
 }
 
 game();
