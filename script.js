@@ -1,5 +1,5 @@
 const choices = ['rock', 'paper', 'scissors'];
-let computerSelection = getComputerChoice(choices);
+
 
 let playerScore = 0;
 let cpuScore = 0;
@@ -49,12 +49,12 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = getPlayerChoice();
+        let computerSelection = getComputerChoice(choices);
         playRound(playerSelection, computerSelection);
-        if (playerScore > cpuScore) {
-            console.log("Player wins!")
-        } else if (cpuScore > playerScore) {
-            console.log("CPU Wins!")
-        } 
+    } if (playerScore > cpuScore) {
+        console.log("Player wins!")
+    } else if (cpuScore > playerScore) {
+        console.log("CPU Wins!")
     } 
 }
 
