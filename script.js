@@ -4,7 +4,7 @@ const choices = ['rock', 'paper', 'scissors'];
 let playerScore = 0;
 let cpuScore = 0;
 let draw = 0;
-let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
+
 
 
 
@@ -42,7 +42,7 @@ function playRound(playerSelection, computerSelection) {
     } else {
         console.log("You win! " + playerSelection + " beats " + computerSelection);
         return playerScore++;
-    }
+    } 
     }
 
 
@@ -51,6 +51,8 @@ function game() {
         let playerSelection = getPlayerChoice();
         let computerSelection = getComputerChoice(choices);
         playRound(playerSelection, computerSelection);
+        let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
+        console.log(gameScore);
     } if (playerScore > cpuScore) {
         console.log("Player wins!")
     } else if (cpuScore > playerScore) {
@@ -59,8 +61,6 @@ function game() {
 }
 
 game();
-
-console.log(gameScore);
 console.log(cpuScore);
 console.log(playerScore);
 
