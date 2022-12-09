@@ -1,7 +1,6 @@
 const choices = ['rock', 'paper', 'scissors'];
 const computerSelection = getComputerChoice(choices);
-
-let playerSelection = prompt("rock, paper, or scissors");
+let playerSelection = getPlayerChoice();
 let playerScore = 0;
 let cpuScore = 0;
 let draw = 0;
@@ -19,6 +18,15 @@ function getComputerChoice(list) {
     return item;
 }
 
+function getPlayerChoice() {
+    const rps = prompt("rock, paper, or scissors?");
+    if (choices.includes(rps)) {
+        console.log(`You've selected ${rps}`)
+        return rps;
+    } else {
+        console.log("Choose between rock, paper or scissors");
+    }
+}
 
 
 function playRound(playerSelection, computerSelection) {
@@ -41,6 +49,8 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
     for (let i = 0; i < 5; i++) {
+        let playerSelection = getPlayerChoice();
+        const computerSelection = getComputerChoice(choices);
         playRound(playerSelection, computerSelection);
         if (playerScore > cpuScore) {
             console.log("Player wins!")
