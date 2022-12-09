@@ -29,9 +29,9 @@ function playRound(playerSelection, computerSelection) {
         console.log("Draw");
         return draw;
     } else if (
-        playerSelection == 'rock' && computerSelection == 'paper' ||
-        playerSelection == 'paper' && computerSelection == 'scissors' ||
-        playerSelection == 'scissors' && computerSelection == 'rock'
+        playerSelection === 'rock' && computerSelection === 'paper' ||
+        playerSelection === 'paper' && computerSelection === 'scissors' ||
+        playerSelection === 'scissors' && computerSelection === 'rock'
     ) {
         console.log("You lose! " + computerSelection + " beats " + playerSelection);
         return cpuScore++;
@@ -50,7 +50,9 @@ function game() {
         playRound(playerSelection, computerSelection);
         let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
         console.log(gameScore);
-    } if (playerScore > cpuScore) {
+    }
+    
+    if (playerScore > cpuScore) {
         console.log("Player wins!")
     } else if (cpuScore > playerScore) {
         console.log("CPU Wins!")
