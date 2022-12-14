@@ -14,9 +14,8 @@ function getComputerChoice(list) {
 }
 
 function getPlayerChoice() {
-    const rps = prompt("rock, paper, or scissors?");
+    const rps = ['rock', 'paper', 'scissors']
     if (choices.includes(rps)) {
-        console.log(`You've selected ${rps}`)
         return rps;
     } else {
         console.log("Choose between rock, paper or scissors");
@@ -41,27 +40,50 @@ function playRound(playerSelection, computerSelection) {
     } 
     }
 
+const rock = document.querySelector('#rock');
+rock.addEventListener('click', function() {
+    let playerSelection = 'rock';
+    let computerSelection = getComputerChoice(choices);
+    playRound(playerSelection,computerSelection);
+});
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = getPlayerChoice();
-        let computerSelection = getComputerChoice(choices);
-        console.log("Computer selected " + computerSelection);
-        playRound(playerSelection, computerSelection);
-        let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
-        console.log(gameScore);
-    }
+const paper = document.querySelector('#paper');
+rock.addEventListener('click', function() {
+    let playerSelection = 'paper';
+    let computerSelection = getComputerChoice(choices);
+    playRound(playerSelection,computerSelection);
+});
+
+const scissors = document.querySelector('#scissors');
+scissors.addEventListener('click', function() {
+    let playerSelection = 'scissors';
+    let computerSelection = getComputerChoice(choices);
+    playRound(playerSelection,computerSelection);
+});
+
+// function game() {
+//     for (let i = 0; i < 100; i++) {
+//         let playerSelection = getPlayerChoice();
+//         let computerSelection = getComputerChoice(choices);
+//         console.log("Computer selected " + computerSelection);
+//         playRound(playerSelection, computerSelection);
+//         let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
+//         console.log(gameScore);
+//         if (playerScore === 5) {
+//             console.log("Player wins game!")
+//             break;
+//         } else if (cpuScore === 5) {
+//             console.log("CPU wins game!")
+//             break;
+//         } else {
+//             console.log("Keep going until you reach 5 points!")
+//         }
+//     }
     
-    if (playerScore > cpuScore) {
-        console.log("Player wins!")
-    } else if (cpuScore > playerScore) {
-        console.log("CPU Wins!")
-    } else {
-        console.log("Draw!")
-    }
-}
+    
+// }
 
-game();
+// game();
 
 
 
