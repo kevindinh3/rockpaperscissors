@@ -26,19 +26,37 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
         const display = document.querySelector('#display');
         display.textContent = "Draw";
+        const score = document.querySelector('#score');
+        score.textContent = "Player: " + playerScore + " - Computer: " + cpuScore;
         return draw;
     } else if (
         playerSelection === 'rock' && computerSelection === 'paper' ||
         playerSelection === 'paper' && computerSelection === 'scissors' ||
         playerSelection === 'scissors' && computerSelection === 'rock'
     ) {
+        cpuScore++;
         const display = document.querySelector('#display');
         display.textContent = ("You lose! " + computerSelection + " beats " + playerSelection);
-        return cpuScore++;
+        const score = document.querySelector('#score');
+        score.textContent = "Player: " + playerScore + " - Computer: " + cpuScore;
+        if (cpuScore === 5) {
+            const gameOver = document.querySelector('#gameOver');
+            gameOver.textContent = ("CPU wins game! First to reach 5 points!");
+        } else {
+            return cpuScore;
+        }
     } else {
+        playerScore++;
         const display = document.querySelector('#display');
         display.textContent = ("You win! " + playerSelection + " beats " + computerSelection);
-        return playerScore++;
+        const score = document.querySelector('#score');
+        score.textContent = "Player: " + playerScore + " - Computer: " + cpuScore;
+        if (playerScore === 5) {
+            const gameOver = document.querySelector('#gameOver');
+            gameOver.textContent = ("Player wins game! First to reach 5 points!");
+        } else {
+            return playerScore;
+        }
     } 
     }
 
@@ -62,37 +80,6 @@ scissors.addEventListener('click', function() {
     computerSelection = getComputerChoice(choices);
     playRound(playerSelection,computerSelection);
 });
-
-
-
-console.log(playerScore);
-console.log(cpuScore);
-
-
-// function game() {
-//     for (let i = 0; i < 100; i++) {
-//         playerSelection = getPlayerChoice();
-//         computerSelection = getComputerChoice(choices);
-//         console.log("Computer selected " + computerSelection);
-//         playRound(playerSelection, computerSelection);
-//         let gameScore = "Player: " + playerScore + " - Computer: " + cpuScore;
-//         console.log(gameScore);
-//         if (playerScore === 5) {
-//             console.log("Player wins game!")
-//             break;
-//         } else if (cpuScore === 5) {
-//             console.log("CPU wins game!")
-//             break;
-//         } else {
-//             console.log("Keep going until you reach 5 points!")
-//         }
-//     }
-    
-    
-// }
-
-// game();
-
 
 
 
